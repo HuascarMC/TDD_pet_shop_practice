@@ -7,14 +7,9 @@ def total_cash(pet_shop)
 end
 
 def add_or_remove_cash(pet_shop, amount)
-  pet_shop[:admin][:total_cash] += 10
+  pet_shop[:admin][:total_cash] += amount
 end
 
-def add_or_remove_cash(pet_shop, amount)
-  if pet_shop[:admin][:total_cash] > 0
-  pet_shop[:admin][:total_cash] += -10
-  end
-end
 
 def pets_sold(pet_shop)
   return pet_shop[:admin][:pets_sold]
@@ -38,4 +33,13 @@ def pets_by_breed(pet_shop, breed)
     end
   end
   return number_of_breed
+end
+
+def find_pet_by_name(pet_shop, name)
+  for pet in pet_shop[:pets]
+    if (pet[:name] == name)
+      return pet
+    end
+  end
+  return nil
 end
