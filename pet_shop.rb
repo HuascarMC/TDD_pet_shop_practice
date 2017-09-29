@@ -54,13 +54,24 @@ end
 
 def add_pet_to_stock(pet_shop, new_pet)
   pet_shop[:pets] << new_pet
-  return pet_shop[:pets].length
+  return pet_shop[:pets].length()
 end
 
 def customer_pet_count(customer)
-  return customer[:pets].length
+  return customer[:pets].length()
 end
 
 def add_pet_to_customer(customer, pet)
   customer[:pets] << pet
+end
+
+def customer_can_afford_pet(customer, pet)
+  if customer[:cash] >= pet[:price]
+    return true
+  end
+  return false
+end
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+
 end
